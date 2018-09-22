@@ -29,7 +29,7 @@ class App extends Component {
             .then(data => {
                 this.setState({ data });
             });
-        }.bind(this), 1);
+        }.bind(this), 100);
     }
 
     handleButtonClick(diceNumber) {
