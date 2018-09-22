@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "dice_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "b8a3213d745380",
+    "password": "47e620ff",
+    "database": "heroku_9e0ce3ae185755b",
+    "host": "us-cdbr-iron-east-01.cleardb.net",
+    "dialect": "mysql"
+  }
+}
