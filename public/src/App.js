@@ -14,22 +14,25 @@ class App extends Component {
         this['handleDisplay'] = this['handleDisplay'].bind(this);
     }
 
+    componentDidMount() {
+        this.lookupInterval = setInterval(() => {
+            fetch('/api/rolls')
+                .then(res => res.json())
+                .then(data => {
+                    this.setState({ data });
+                });
+        }, 500)
+    }
+    componentWillUnMount() {
+        clearInterval(this.lookupInterval)
+    }
+
     componentWillMount() {
         fetch('/api/rolls')
             .then(res => res.json())
             .then(data => {
                 this.setState({ data });
             });
-    }
-
-    componentDidMount() {
-        setInterval(function () {
-            fetch('/api/rolls')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ data });
-            });
-        }.bind(this), 100);
     }
 
     handleButtonClick(diceNumber) {
