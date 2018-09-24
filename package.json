@@ -15,6 +15,9 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "mysql2": "^1.6.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "sequelize": "^4.38.1"
   },
   "devDependencies": {
@@ -23,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/colinlemus/DND-Dice-Roll"
   },
   "keywords": [
     "node",
