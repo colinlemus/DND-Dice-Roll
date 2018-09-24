@@ -8,18 +8,17 @@ const initalState = {
 };
 
 export default (state = initalState, action) => {
-    switch (action.type) {
-        case FETCH_ROLLS:
-            return {
-                ...state,
-                items: action.payload
-            };
-        case NEW_ROLL:
-            return {
-                ...state,
-                item: action.payload
-            };
-        default:
-            return state;
+    if (action.type === FETCH_ROLLS) {
+        return {
+            ...state,
+            items: action.payload
+        }
+    } else if(action.type === NEW_ROLL) {
+        return {
+            ...state,
+            item: action.payload
+        }
+    } else {
+        return state;
     }
 }
