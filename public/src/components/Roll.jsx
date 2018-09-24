@@ -119,8 +119,8 @@ Roll.prototypes = {
 };
 
 const mapStateToProps = state => ({
-    rolls: state.rolls.items,
-    newRoll: state.rolls.item
+    rolls: state.rolls.rolls,
+    newRoll: state.rolls.roll
 });
 
 
