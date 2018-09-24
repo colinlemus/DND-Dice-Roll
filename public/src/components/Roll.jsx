@@ -19,7 +19,7 @@ class Roll extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.newRoll) {
+        if (nextProps.newRoll) {
             this.props.rolls.unshift(nextProps.newRoll);
         }
     }
@@ -42,6 +42,8 @@ class Roll extends Component {
             time: currentTime,
             username: localStorage.getItem('username')
         };
+
+        console.log(rolls);
 
         this.props.createRoll(rolls);
     }
@@ -70,37 +72,25 @@ class Roll extends Component {
     render() {
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid bg-dark text-white">
-                    <div className="container">
-                        <h1 className="font-weight-bold text-center">Dungeons & Dragons Dice Roll</h1>
+                <div className='jumbotron jumbotron-fluid bg-dark text-white'>
+                    <div className='container'>
+                        <h1 className='font-weight-bold text-center'>Dungeons & Dragons Dice Roll</h1>
                     </div>
                 </div>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom">
-                                <button onClick={() => this.handleButtonClick(4)}>Roll 4</button>
-                            </div>
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom">
-                                <button onClick={() => this.handleButtonClick(6)}>Roll 6</button>
-                            </div>
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom">
-                                <button onClick={() => this.handleButtonClick(8)}>Roll 8</button>
-                            </div>
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom">
-                                <button onClick={() => this.handleButtonClick(10)}>Roll 10</button>
-                            </div>
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom">
-                                <button onClick={() => this.handleButtonClick(12)}>Roll 12</button>
-                            </div>
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom">
-                                <button onClick={() => this.handleButtonClick(20)}>Roll 20</button>
-                            </div>
+                <div className='container-fluid'>
+                    <div className='row'>
+                        <div className='col-sm-4'>
+                            <div onClick={() => this.handleButtonClick(4)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll 4</div>
+                            <div onClick={() => this.handleButtonClick(6)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll 6</div>
+                            <div onClick={() => this.handleButtonClick(8)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll 8</div>
+                            <div onClick={() => this.handleButtonClick(10)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll 10</div>
+                            <div onClick={() => this.handleButtonClick(12)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll 12</div>
+                            <div onClick={() => this.handleButtonClick(20)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll 20</div>
                         </div>
-                        <div className="col-sm-8 two-margin-bottom">
-                            <div className="card-header text-center font-weight-bold border bg-secondary text-white">Results:</div>
-                            <div className="card-body text-center border-left border-bottom border-right">
-                                <div id="results">
+                        <div className='col-sm-8 two-margin-bottom'>
+                            <div className='card-header text-center font-weight-bold border bg-secondary text-white'>Results:</div>
+                            <div className='card-body text-center border-left border-bottom border-right'>
+                                <div id='results'>
                                     {this.handleDisplay()}
                                 </div>
                             </div>
