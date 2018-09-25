@@ -1,11 +1,11 @@
 import { FETCH_ROLLS, NEW_ROLL } from './types';
+import axios from 'axios';
 
 export const fetchRolls = () => dispatch => {
     fetch('/api/rolls')
         .then(res => res.json())
         .then(data => dispatch({
-            type: FETCH_ROLLS,
-            payload: data
+            type: FETCH_ROLLS, payload: data
         }));
 }
 
