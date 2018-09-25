@@ -13,7 +13,7 @@ class Results extends Component {
     componentDidMount() {
         this.lookupInterval = setInterval(() => {
             this.props.fetchRolls();
-        }, 500)
+        }, 200)
     }
 
     componentWillUnMount() {
