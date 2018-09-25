@@ -1,5 +1,4 @@
 import { FETCH_ROLLS, NEW_ROLL } from './types';
-import axios from 'axios';
 
 export const fetchRolls = () => dispatch => {
     fetch('/api/rolls')
