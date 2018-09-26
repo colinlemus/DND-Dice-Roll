@@ -12,25 +12,25 @@ class Results extends Component {
 
     componentDidMount() {
         this.lookupInterval = setInterval(() => {
-            this.props.fetchRolls();
+            this['props'].fetchRolls();
         }, 200)
     }
 
     componentWillUnMount() {
-        clearInterval(this.lookupInterval)
+        clearInterval(this['lookupInterval']);
     }
 
     componentWillMount() {
-        this.props.fetchRolls();
+        this['props'].fetchRolls();
     }
 
     handleDisplay() {
-        if (this.props.rolls.length != 0) {
+        if (this['props']['rolls']['length'] != 0) {
             return (
                 <div>
-                    {this.props.rolls.map(element => {
+                    {this['props']['rolls'].map(element => {
                         return (
-                            <div>{element.roll} | {element.number} | {element.time} | {element.username} </div>
+                            <div>{element['roll']} | {element['number']} | {element['time']} | {element['username']} </div>
                         );
                     })}
                 </div>
@@ -65,7 +65,7 @@ Results.prototypes = {
 };
 
 const mapStateToProps = state => ({
-    rolls: state.rolls.rolls,
+    rolls: state['rolls']['roll'],
 });
 
 
