@@ -13,7 +13,7 @@ class Button extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.newRoll) {
-            this.props.rolls.unshift(nextProps.newRoll);
+            this['props']['rolls'].unshift(nextProps.newRoll);
         }
     }
 
@@ -28,15 +28,14 @@ class Button extends Component {
             username: localStorage.getItem('username')
         };
 
-        this.props.createRoll(rolls);
+        this['props'].createRoll(rolls);
     }
 
     render() {
         return (
-            <div onClick={() => this.handleButtonClick(this.props.diceNumber)} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll {this.props.diceNumber}</div>
+            <div onClick={() => this.handleButtonClick(this['props']['dicerNumber'])} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll {this['props']['dicerNumber']}</div>
         )
     }
-    
 }
 
 Button.prototypes = {
@@ -45,8 +44,8 @@ Button.prototypes = {
 };
 
 const mapStateToProps = state => ({
-    rolls: state.rolls.rolls,
-    newRoll: state.rolls.roll
+    rolls: state['rolls']['rolls'],
+    newRoll: state['rolls']['roll']
 });
 
 export default connect(mapStateToProps, { createRoll })(Button);
