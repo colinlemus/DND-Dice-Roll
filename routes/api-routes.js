@@ -2,7 +2,7 @@ var db = require('../models');
 
 module.exports = app => {
 	app.get('/api/rolls', (req, res) => {
-		db.Rolls.findAll({
+		db['Rolls'].findAll({
 			order: [
 				['id', 'DESC'],
 			],
@@ -12,18 +12,18 @@ module.exports = app => {
 	});
 
 	app.post('/api/rolls', (req, res) => {
-		db.Rolls.create({
-			roll: req.body.roll,
-			number: req.body.number,
-			time: req.body.time,
-			username: req.body.username
+		db['Rolls'].create({
+			roll: req['body']['roll'],
+			number: req['body']['number'],
+			time: req['body']['time'],
+			username: req['body']['username']
 		}).then(dbRoll => {
 			res.json(dbRoll);
 		});
 	});
 
 	app.delete('/api/clear', (req, res) => {
-		db.Rolls.destroy({
+		db['Rolls'].destroy({
 			where: {}
 		}).then(dbRoll => {
 			res.json(dbRoll);

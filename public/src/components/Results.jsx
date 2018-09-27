@@ -11,13 +11,13 @@ class Results extends Component {
     }
 
     componentDidMount() {
-        this.lookupInterval = setInterval(() => {
+        this['lookupInterval'] = setInterval(() => {
             this['props'].fetchRolls();
         }, 200)
     }
 
     componentWillUnMount() {
-        clearInterval(this['lookupInterval']);
+        clearInterval(this['lookupInterval'])
     }
 
     componentWillMount() {
@@ -60,12 +60,12 @@ class Results extends Component {
 }
 
 Results.prototypes = {
-    fetchRolls: PropTypes.func.isRequired,
-    rolls: PropTypes.array.isRequired,
+    fetchRolls: PropTypes['func']['isRequired'],
+    rolls: PropTypes['array']['isRequired'],
 };
 
 const mapStateToProps = state => ({
-    rolls: state['rolls']['roll'],
+    rolls: state['rolls']['rolls'],
 });
 
 

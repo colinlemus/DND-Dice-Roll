@@ -12,8 +12,8 @@ class Button extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.newRoll) {
-            this['props']['rolls'].unshift(nextProps.newRoll);
+        if (nextProps['newRoll']) {
+            this.props.rolls.unshift(nextProps['newRoll']);
         }
     }
 
@@ -28,19 +28,19 @@ class Button extends Component {
             username: localStorage.getItem('username')
         };
 
-        this['props'].createRoll(rolls);
+        this.props.createRoll(rolls);
     }
 
     render() {
         return (
-            <div onClick={() => this.handleButtonClick(this['props']['dicerNumber'])} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll {this['props']['dicerNumber']}</div>
+            <div onClick={() => this.handleButtonClick(this['props']['diceNumber'])} className='card-header text-center font-weight-bold border bg-secondary text-white two-margin-bottom'>Roll {this['props']['diceNumber']}</div>
         )
     }
 }
 
 Button.prototypes = {
-    rolls: PropTypes.array.isRequired,
-    newRoll: PropTypes.object
+    rolls: PropTypes['array']['isRequired'],
+    newRoll: PropTypes['object']
 };
 
 const mapStateToProps = state => ({

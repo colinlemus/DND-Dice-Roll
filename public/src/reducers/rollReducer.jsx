@@ -8,15 +8,15 @@ const initalState = {
 };
 
 export default (state = initalState, action) => {
-    if (action.type === FETCH_ROLLS) {
+    if (action['type'] === FETCH_ROLLS) {
         return {
             ...state,
-            rolls: action.payload
+            rolls: action['payload']
         }
     } else if(action.type === NEW_ROLL) {
         return {
             ...state,
-            roll: action.payload
+            roll: action['payload']
         }
     } else {
         return state;
