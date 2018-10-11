@@ -7,17 +7,15 @@ import { createRoll } from '../actions/appAction';
 class Button extends Component {
     constructor(props) {
         super(props);
-
-        this['handleButtonClick'] = this['handleButtonClick'].bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps = (nextProps) => {
         if (nextProps['newRoll']) {
             this.props.rolls.unshift(nextProps['newRoll']);
         }
     }
 
-    handleButtonClick(diceNumber) {
+    handleButtonClick = (diceNumber) => {
         let currentTime = moment().format('h:mm:ss A');
         let roll = Math.floor(Math.random() * diceNumber) + 1;
 

@@ -6,25 +6,23 @@ import { fetchRolls } from '../actions/appAction';
 class Results extends Component {
     constructor(props) {
         super(props);
-
-        this['handleDisplay'] = this['handleDisplay'].bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         this['lookupInterval'] = setInterval(() => {
             this['props'].fetchRolls();
         }, 200)
     }
 
-    componentWillUnMount() {
+    componentWillUnMount = () => {
         clearInterval(this['lookupInterval'])
     }
 
-    componentWillMount() {
+    componentWillMount = () => {
         this['props'].fetchRolls();
     }
 
-    handleDisplay() {
+    handleDisplay = () => {
         if (this['props']['rolls']['length'] != 0) {
             return (
                 <div>
@@ -35,7 +33,7 @@ class Results extends Component {
                     })}
                 </div>
 
-            );
+            );	
         } else {
             return (
                 <div>

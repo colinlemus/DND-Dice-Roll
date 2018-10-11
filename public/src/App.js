@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { store } from './Store';
 import { Provider } from 'react-redux';
-import Roll from './components/Roll';
+import Roll from './components/Buttons';
 
 class App extends Component {
     render() {
